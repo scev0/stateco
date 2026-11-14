@@ -14,7 +14,12 @@
 		"useUnknownInCatchVariables": true,
 		"noFallthroughCasesInSwitch": true,
 		// "noUnusedLocals": true,
+
 		// allow default imports from external modules with no default export
 		"allowSyntheticDefaultImports": true,
+
+		// "moduleResolution": "node",
+		// "resolveJsonModule": true,
+		// "esModuleInterop": true,
 	}
 }

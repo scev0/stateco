@@ -6,6 +6,7 @@ declare namespace JSX {
 	interface IntrinsicElements {
 		a: Attrs;
 		area: Attrs;
+		aside: Attrs;
 		b: Attrs;
 		body: Attrs;
 		br: Attrs;
@@ -15,6 +16,9 @@ declare namespace JSX {
 		details: Attrs;
 		div: Attrs;
 		form: Attrs;
+		h1: Attrs;
+		h2: Attrs;
+		h3: Attrs;
 		header: Attrs;
 		hr: Attrs;
 		html: Attrs;
@@ -25,11 +29,13 @@ declare namespace JSX {
 		label: Attrs;
 		legend: Attrs;
 		link: Attrs;
+		main: Attrs;
 		menu: Attrs;
 		menuitem: Attrs;
 		ol: Attrs;
 		optgroup: Attrs;
 		option: Attrs;
+		p: Attrs;
 		pivture: Attrs;
 		pre: Attrs;
 		section: Attrs;
@@ -53,7 +59,7 @@ declare namespace JSX {
 	interface Attrs {
 		[name: string]: AttrValue;
 	}
-	
+
 	type AttrValue = string
 					 | number
 					 | boolean
@@ -78,6 +84,10 @@ declare module "*.png" {
 	export default value;
 }
 declare module "*.ico" {
+	const value: string;
+	export default value;
+}
+declare module "*.dat" {
 	const value: string;
 	export default value;
 }

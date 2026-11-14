@@ -8,6 +8,7 @@
   "scripts": {
     "start": "webpack serve --mode development --config webpack.config.js",
     "build": "webpack --mode production --config webpack.config.js",
+    "fetch-isic": "node tools/fetch_isic.js",
     "test": "webpack serve --mode development --config webpack.config.js --env test"
   },
   "devDependencies": {

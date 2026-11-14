@@ -102,6 +102,14 @@ const config = (env, argv) => {
 					filename: "[name][ext]",
 				},
 			},
+			// Data files: copy data files 'as is'
+			{
+				test: /\.(dat)$/,
+				type: "asset/resource",
+				generator: {
+					filename: "[name][ext]",
+				},
+			},
 			// JSX|TSX
 			{
 				test: /\.(jsx?|tsx?)$/,
