@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		// Language features
+		"jsx": "preserve",
+		"noEmitOnError": true,
+		"strict": true,
+		"noImplicitAny": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"strictNullChecks": true,
+		"strictBindCallApply": true,
+		"strictFunctionTypes": true,
+		"strictPropertyInitialization": true,
+		"useUnknownInCatchVariables": true,
+		"noFallthroughCasesInSwitch": true,
+		// "noUnusedLocals": true,
+		// allow default imports from external modules with no default export
+		"allowSyntheticDefaultImports": true,
+	}
+}
