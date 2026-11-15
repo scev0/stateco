@@ -1,5 +1,6 @@
 
 import { Classifier } from "./isic/classifier";
+import type { IClassifier } from "./isic/classifier";
 
 export { App };
 
@@ -7,7 +8,7 @@ export { App };
 function App() {
 
 	let m_body_el: HTMLElement;
-	let m_classifier: ReturnType<typeof Classifier>;
+	let m_classifier: IClassifier;
 
 	return {
 		Init,
@@ -18,7 +19,7 @@ function App() {
 	function Init(): void {
 		m_body_el = document.body || <div />;
 
-		// Интерактивный классификатор ISIC Rev.5 выводится прямо в <body>
+		// The ISIC Rev.5 classifier is rendered right into <body>
 		m_classifier = Classifier(m_body_el);
 		m_classifier.Init();
 	}

@@ -5,36 +5,37 @@ export type {
 	IsicDivision,
 	IsicSection,
 	IsicTree,
+	IsicItem,
 	GroupExample,
 	CompanyInfo,
 	SelectedItem,
 };
 
 
-/** Строка структуры классификатора из исходного файла: ["01", "Crop and animal production"] */
+/** A row of the classifier structure file: ["01", "Crop and animal production"] */
 interface IsicRow {
 	code: string;
 	en: string;
 }
 
-/** Группа (уровень 3, три цифры) */
+/** Group (level 3, three digits) */
 interface IsicGroup {
 	code: string;
 	en: string;
-	division: string;   // код подразделения, например "01"
-	section: string;    // код раздела, например "A"
+	division: string;   // division code, for example "01"
+	section: string;    // section code, for example "A"
 }
 
-/** Подразделение (уровень 2, две цифры) */
+/** Division (level 2, two digits) */
 interface IsicDivision {
 	code: string;
 	en: string;
 	ru: string;
-	section: string;    // код раздела
+	section: string;    // section code
 	groups: IsicGroup[];
 }
 
-/** Раздел (уровень 1, буква) */
+/** Section (level 1, a letter) */
 interface IsicSection {
 	code: string;
 	en: string;
@@ -42,7 +43,7 @@ interface IsicSection {
 	divisions: IsicDivision[];
 }
 
-/** Дерево классификатора и быстрый доступ к узлам по коду */
+/** Classifier tree and quick lookup of its nodes by code */
 interface IsicTree {
 	sections: IsicSection[];
 	sections_by_code: Record<string, IsicSection>;
@@ -50,23 +51,26 @@ interface IsicTree {
 	groups_by_code: Record<string, IsicGroup>;
 }
 
-/** Краткое описание группы: продукция и примеры компаний */
+/** Short description of a group: products and example companies */
 interface GroupExample {
 	products: string;
 	companies: string[];
 }
 
-/** Запись справочника компаний. cap — капитализация, млрд долл. США; estimated — оценка для непубличных */
+/** Company directory record. cap: market capitalization, billion USD; estimated: an estimate for private companies */
 interface CompanyInfo {
 	name: string;
 	country: string;
 	cap: number;
 	estimated?: boolean;
-	isic_group: string;   // трёхзначный код группы ISIC
+	isic_group: string;   // three-digit ISIC group code
 }
 
-/** Выбранный элемент дерева: уровень 1 (раздел), 2 (подразделение) или 3 (группа) */
+/** Selected tree item: level 1 (section), 2 (division) or 3 (group) */
 interface SelectedItem {
 	level: 1 | 2 | 3;
 	code: string;
 }
+
+/** Any item of the classifier tree: a section, a division or a group */
+type IsicItem = IsicSection | IsicDivision | IsicGroup;

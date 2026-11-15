@@ -10,7 +10,7 @@ async function fetchIsicStructure(url) {
 		const structure_response = await fetch(url);
 
 		if(!structure_response.ok) {
-			throw new Error(`Не удалось загрузить дерево классификатора: ${response.status}`);
+			throw new Error(`Не удалось загрузить дерево классификатора: ${structure_response.status}`);
 		}
 
 		const csv_text = await structure_response.text();
